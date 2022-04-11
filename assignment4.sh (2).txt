@@ -1,0 +1,62 @@
+#! /bin/bash
+
+
+
+
+clear
+date > mathresults.txt
+echo -e "\n" >> mathresults.txt
+
+
+
+
+int1=0
+int2=0
+
+echo "Would you like to input a mathematical operation? (yes/no): "
+read result1
+
+while [[ $result1 == "yes" || $result2 == "yes" ]]
+do
+
+echo "Enter the first number: "
+read int1
+
+echo "Enter the second number: "
+read int2
+
+echo "Enter the desired mathematical operation (addition, subtraction, multiplication, division, or modulus): "
+read opr
+  if [[ $opr == "addition" ]]
+  then
+      echo "The desired mathematical operation is $opr."
+      echo "The sum of $int1 plus $int2 is: $(( int1 + int2 ))."
+  elif [[ $opr == "subtraction" ]]
+  then
+      echo "The desired mathematical operation is $opr."
+      echo "The difference of $int1 minus $int2 is: $(( int1 - int2))."
+  elif [[ $opr == "multiplication" ]]
+  then
+      echo "The desired mathematical operations is $opr."
+      echo "The product of $int1 and $int2 is: $(( int1 * int2))."
+  elif [[ $opr == "division" ]]
+  then
+      echo "The desired mathematical operation is $opr."
+      echo "The quotient of $int1 and $int2 is: $(( int1 / int2))."
+  elif [[ $opr == "modulus" ]]
+  then
+      echo "The desired mathematical operation is $opr."
+      echo "The modulo of $int1 and $int2 is: $(( int1 % int2))."
+  else
+      echo "Invalid Input Try Again"
+  fi
+  
+echo "Would you like to perform another operation? (yes/no)."
+read result2
+
+if [[ $result1 == "no" || $result2 == "no" ]]
+  then
+      break
+  fi
+done
+
